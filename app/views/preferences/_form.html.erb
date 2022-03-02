@@ -1,0 +1,11 @@
+<%= bootstrap_form_for(@preference, local: true, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+  <%= f.alert_message "Please fix the error below.", error_summary: false %>
+  <%= f.text_field :repayment_way %>
+  <%= f.number_field :interest_rate %>
+  <%= f.number_field :amount %>
+  <%= f.number_field :period %>
+  
+  <%= f.form_group do %>
+    <%= f.primary @preference.persisted? ? "Update Preference": "Create Preference" %>
+  <% end %>
+<% end %>

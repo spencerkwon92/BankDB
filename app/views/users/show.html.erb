@@ -1,0 +1,16 @@
+<h1>Aloha <%= current_user.name %> </h1>
+<h1>This is your profile</h1>
+<br>
+<h1>Profile</h1>
+
+<div class=user>
+    <div id = "user_<%= current_user.id %>" class="user-body">
+        <p><strong>Name </strong><%= current_user.name %><p>
+        <p><strong>Email </strong><%= current_user.email %><p>
+    </div>  
+</div>
+
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <%= link_to "Edit", edit_user_path(@current_user), class:"btn btn-secondary" %>
+    <%= link_to "Delete", @user, method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-secondary" %>
+</div>

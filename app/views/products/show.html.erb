@@ -1,0 +1,9 @@
+<% title @bank.name %>
+
+<%= render @product %>
+
+<%= link_to "Edit", edit_bank_product_path(@bank, @product), class: "btn btn-primary" %>
+<%= link_to "Delete", bank_product_path(@bank, @product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
+<%= link_to "All Products", bank_products_path(@bank), class: "btn btn-primary" %>
+
+

@@ -1,0 +1,10 @@
+
+
+<div id="bank_<%= bank.id %>" class = "bank">
+    <p><strong>Name: </strong><%= link_to_unless_current bank.name, bank %></p>
+    <p><strong>Assets: </strong><%= bank.assets %> USD</p>
+    <p><strong>employees Number: </strong><%= bank.employees %></p>
+    <p><strong>HQ Location: </strong><%= bank.location %></p>
+
+</div>
+

@@ -1,0 +1,7 @@
+<div id="memo_<%= memo.id %>" class="memo">
+    <p><strong> Content: </strong> <%= link_to_unless_current memo.body, preference_memo_path(@preference,memo) %></p>
+
+    <%= link_to "Edit", edit_preference_memo_path(@preference, memo), class:"btn btn-danger" %> 
+    <%= link_to "Delete", preference_memo_path(@preference, memo), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-warning" %> 
+
+</div>

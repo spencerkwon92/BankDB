@@ -1,0 +1,9 @@
+<%= bootstrap_form_with(model: [@preference, @memo], local: true, layout: :horizontal, 
+    label_col: "col-sm-2", control_col: "col-sm-10" ) do |f| %>
+    <%= f.alert_message "please fix the derrors below.", error_summary: false %>
+    <%= f.text_area :body%>
+    <br>
+    <%= f.form_group do %>
+        <%= f.primary @memo.persisted? ? "Update Memo" : "Create Memo" %>
+    <% end %>
+<% end %>

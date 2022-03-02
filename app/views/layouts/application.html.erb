@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RichWays<%= " | " +yield(:title) unless yield(:title).blank? %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+  </head>
+
+  <body>
+    
+    <div id="flash-messages" class="row">
+      <% flash.each do |name, msg| %>
+        <div class = "alert alert-<%= name == 'notice' ? 'primary' : 'danger' %> alert-dismissable col">
+          <%= msg%>
+          <button type="button" class="close" data-dissmiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+    </div>
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <div class="container-fluid">
+        
+        <%= link_to "RichWays", root_path, class: "navbar-brand" %>
+        <!--<a class="navbar-brand" href="#">Top navbar</a>-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <%= nav_link "Home", root_path %>
+            <%= nav_link "About", about_path %>
+            <% if current_user && current_user.is_admin? %>
+              <%= nav_link "Registered Banks", banks_path%>
+            <% end %>
+            <% if current_user&&!current_user.is_admin?%>
+              <%= nav_link "Preferences", preferences_path %>
+            <% end %>
+            
+          </ul>
+          
+          <ul class="navbar-nav pull-right mr-auto">
+            <% if current_user %>
+              <%= nav_link "My Page", current_user %>
+              <%= nav_link "Logout", logout_path %>
+            <% else %>
+              <%= nav_link "Sign Up", signup_path %>
+              <%= nav_link "Login", login_path %>
+            <% end %>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    
+    <main class="container">
+      <% if @show_title%>
+      <div id="title" class = "row">
+        <div class = "col">
+          <h1><%= yield(:title) %></h1>
+        </div>
+      </div>
+      <% end %>
+      
+      <%= yield %>
+    </main>
+    
+  </body>
+  
+  <footer>
+    <p>Copyright 2021- by AWS Data. All Rights Reserverd.</p>
+  </footer>
+</html>

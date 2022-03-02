@@ -1,0 +1,21 @@
+<% title "Bank Information"%>
+<div class = "bank_wrap_sigle">
+<%= render @bank %>
+
+</div>
+
+<% if current_user && current_user.is_admin? %>
+    <%= link_to "EDIT", edit_bank_path(@bank), class: "btn btn-primary"%>
+    <%= link_to "DELETE", @bank, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %> 
+    <%= link_to "ALL REGISTERED BANKS", banks_path, class: "btn btn-primary" %>
+<% end %>
+
+
+</br>
+<h3> All Bank's Loan Products </h3>
+
+<% if @bank.products %>
+    <%= render @bank.products%>
+<% else %>
+    <h2>There is no registered loan products</h2>
+<% end %>

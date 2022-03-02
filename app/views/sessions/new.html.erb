@@ -1,0 +1,9 @@
+<% title 'Login' %>
+
+<%= bootstrap_form_with(url: sessions_path, method: :psot, local: true) do |f| %>
+    <%= f.email_field :email %>
+    <%= f.password_field :password %>
+    <%= f.primary "Login" %>
+    </br>
+    <%= link_to "Log In with Github", "/auth/github", method: :post, class:"btn btn-secondary" %>
+<% end %>

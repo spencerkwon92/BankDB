@@ -1,0 +1,6 @@
+<div id = "product_<%= product.id %>" class = "card-body">
+   <p><strong>Name:</strong> <%= link_to_unless_current product.name, bank_product_path(@bank, product) %></p>
+   <p><strong>Interest Rate:</strong> <%= product.interest %></p>
+   <p><strong>Repayment Way</strong> <%= product.repayment_way %></p>
+   <p><strong>Period:</strong> <%= product.period %></p>
+</div>

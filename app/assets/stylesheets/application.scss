@@ -1,0 +1,33 @@
+@import "home";
+@import "preferences";
+@import "bootstrap/scss/bootstrap";
+@import "rails_bootstrap_forms";
+@import "memos";
+@import "banks";
+
+body{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+footer{
+    position: fixed;
+    width: 60%;
+    bottom: 0; 
+    background-color: rgb(89, 89, 89);
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+nav{
+    background-color: rgb(89, 89, 89);
+}
+
+.form-group{
+    margin: 10px auto;
+    width: 50%;
+    
+}

@@ -1,0 +1,13 @@
+<%= bootstrap_form_for(@bank, local: true, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+    
+    <%= f.alert_message "Please fix the error below.", error_summary: false %>
+    <%= f.text_field :name %>
+    <%= f.number_field :assets %>
+    <%= f.number_field :employees %>
+    <%= f.text_field :location %>
+    
+    <%= f.form_group do %>
+        <%= f.primary @bank.persisted? ? "Update Information" : "Register" %>
+    <% end %>
+
+<% end %>

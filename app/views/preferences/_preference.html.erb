@@ -1,0 +1,9 @@
+
+<div class="card">
+    <div id = "preference_<%= preference.id %>" class="card-body">
+        <p><strong>Repayment Way: </strong><%= link_to_unless_current preference.repayment_way, preference %><p>
+        <p><strong>Interest Rate: </strong><%= preference.interest_rate %>%<p>
+        <p><strong>Amount: </strong><%= preference.amount %> USD<p>
+        <p><strong>Period: </strong><%= preference.period %> years<p>
+    </div>  
+</div>

@@ -1,0 +1,9 @@
+<!--<h1>Memos#index</h1>-->
+<!--<p>Find me in app/views/memos/index.html.erb</p>-->
+
+<% title @preference.repayment_way %>
+<div class = "show_all">
+    <%= render @memos %>
+</div>
+<br>
+<%= link_to "New Memo", new_preference_memo_path(@preference), class: "btn btn-primary"%>

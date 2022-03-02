@@ -1,0 +1,18 @@
+<% title "Preference"%>
+
+<%= render @preference %>
+
+
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <%= link_to "Edit", edit_preference_path(@preference), class:"btn btn-danger" %> 
+    <%= link_to "Delete", @preference, method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-warning" %> 
+    <%= link_to "All preference", preferences_path, class:"btn btn-success" %>
+    <%= link_to "Memos", preference_memos_path(@preference), class:"btn btn-success" %>
+</div>
+
+<br>
+<h2>Memos</h2>
+
+<%= render @preference.memos %>
+
+<%= link_to "New Memo", new_preference_memo_path(@preference), class: "btn btn-primary" %>
